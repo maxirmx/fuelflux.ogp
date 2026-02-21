@@ -6,8 +6,16 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 
 # Compiler flags (equivalent to Makefile's -O2 -Wall -Wextra)
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra")
-set(CMAKE_C_FLAGS_RELEASE "-O2")
+add_compile_options(-Wall -Wextra)
+
+# Set default build type to Release if not specified
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type" FORCE)
+endif()
+
+# Match Makefile's -O2 optimization level for Release builds
+set(CMAKE_C_FLAGS_RELEASE "-O2 -DNDEBUG" CACHE STRING "Release flags" FORCE)
+set(CMAKE_C_FLAGS_DEBUG "-g" CACHE STRING "Debug flags" FORCE)
 
 # Find libgpiod
 find_library(GPIOD_LIBRARY gpiod)

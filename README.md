@@ -42,11 +42,13 @@ gpiomon --falling gpiochip0 <LINE_OFFSET>
 ```bash
 mkdir build
 cd build
-cmake ..
+cmake -DCMAKE_BUILD_TYPE=Release ..
 make
 ```
 
 Бинарный файл будет в `build/pulse_test`.
+
+Примечание: `-DCMAKE_BUILD_TYPE=Release` включает оптимизацию -O2 (по умолчанию тоже Release).
 
 ### Вариант 2: Make
 ```bash
