@@ -2,7 +2,8 @@
 
 В комплекте:
 - `pulse_test.c` — тестовая программа (C) для подсчёта импульсов по прерываниям (edge events)
-- `Makefile` — сборка
+- `CMakeLists.txt` — сборка (CMake)
+- `Makefile` — альтернативная сборка (Make)
 - `README.md` — инструкция
 
 ## Схема подключения (1 канал)
@@ -36,9 +37,23 @@ gpiomon --falling gpiochip0 <LINE_OFFSET>
 ```
 
 ## Сборка
+
+### Вариант 1: CMake (рекомендуется)
+```bash
+mkdir build
+cd build
+cmake ..
+make
+```
+
+Бинарный файл будет в `build/pulse_test`.
+
+### Вариант 2: Make
 ```bash
 make
 ```
+
+Бинарный файл будет в текущей директории `pulse_test`.
 
 ## Запуск
 ### Только импульсы (и pps)
