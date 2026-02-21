@@ -17,6 +17,10 @@ CMakeUserPresets.json
 
 # Build artifacts
 pulse_test
+ogp
+
+# Alternative build system
+Makefile
 
 # CLion
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can

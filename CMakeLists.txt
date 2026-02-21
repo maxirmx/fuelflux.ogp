@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 3.10)
-project(fuelflux_ogp C)
+cmake_minimum_required(VERSION 3.16)
+project(ogp C)
 
 # Set C standard
 set(CMAKE_C_STANDARD 11)
@@ -28,10 +28,10 @@ if(NOT GPIOD_LIBRARY)
 endif()
 
 # Add executable
-add_executable(pulse_test pulse_test.c)
+add_executable(ogp pulse_test.c)
 
 # Link libraries
-target_link_libraries(pulse_test ${GPIOD_LIBRARY})
+target_link_libraries(ogp ${GPIOD_LIBRARY})
 
 # Installation (optional)
-install(TARGETS pulse_test DESTINATION bin)
+install(TARGETS ogp DESTINATION bin)
