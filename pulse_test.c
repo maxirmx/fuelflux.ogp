@@ -2,8 +2,8 @@
 // Simple pulse counter using libgpiod (v1 API).
 //
 // Build:  make
-// Run:    ./pulse_test gpiochip0 72
-//         ./pulse_test gpiochip0 72 --k 80
+// Run:    ./pulse_test gpiochip0 76
+//         ./pulse_test gpiochip0 76 --k 80
 //
 // Active-low pulses assumed -> falling edge.
 
@@ -26,8 +26,8 @@ static void usage(const char* prog) {
         "Usage:\n"
         "  %s <gpiochip> <line_offset> [--k <pulses_per_liter>]\n\n"
         "Examples:\n"
-        "  %s gpiochip0 72\n"
-        "  %s gpiochip0 72 --k 80\n",
+        "  %s gpiochip0 76\n"
+        "  %s gpiochip0 76 --k 80\n",
         prog, prog, prog
     );
 }
